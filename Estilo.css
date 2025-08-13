@@ -1,0 +1,454 @@
+*{
+       box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+    html{
+      scroll-behavior: smooth;
+    }
+
+    body {
+    font-family: arial, sans-serif;
+    background: linear-gradient(to bottom right, #8e2de2, #4a00e0);
+    color: #fff;
+    }
+    
+    header {
+    text-align: center;
+    padding: 60px 20px;
+    text-shadow: 2px 2px 6px #000000; 
+    height: 60vh;
+    align-content: center;
+    font-size: 2rem;
+    position: relative;  
+  }
+
+    header::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(./Foto\ portada.avif);
+      background-position: center;
+      background-attachment: fixed;
+      background-size: cover;
+      opacity: 0.85;
+      z-index: -1;
+    }
+
+  .container-header{
+    border: 1px solid transparent;
+    border-radius: 15px;
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px 0;
+    padding-bottom: 20px;
+    backdrop-filter: blur(100px);
+  }
+
+  .text{
+    display: grid;
+    place-items: center;
+  }
+
+  #historia{
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  #historia h2{
+    margin: 0;
+    padding: 20px 0 15px 0;
+  }
+
+  #historia p{
+    padding-bottom: 10px;
+  }
+
+    nav {
+    background: rgba(0, 0, 0, 0.667);
+    text-align: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .smooth-scroll{
+    scroll-behavior: smooth;
+  }
+
+/*Color y Ecto del menu de navegacion*/
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 12px;
+  }
+/*Color de la letra del menu cuando pasa el mouse */
+  nav a:hover {
+    color: #e42b9d;
+  }
+  
+    h2 {
+      text-align: center;
+
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    }
+    h3{
+      color: #faf8f8;
+      
+    }
+    
+    .platos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+      
+    }/*tamaño de los contenedores y sonbras*/
+    .plato {
+      width: 250px;
+      height: 340px;
+      border-radius: 20px;
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);     
+    }
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      color: white;
+      font-size:11px;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    
+    
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border: 1px solid #000000;
+      border-radius: 20px;
+      padding: 0.5px;
+      box-sizing: border-box;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+    }
+
+    .flip-card-front{
+      z-index: 2;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      font-family: arial;
+      text-align: left;
+    }
+
+    .flip-card-back h3{
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+     #contacto {
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 60px;
+    padding: 20px;
+    color: #cb97f9;
+  }
+
+  #contacto .title{
+    margin: 10px;
+    color: #cb97f9;
+  }
+
+  .container-button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 95px;
+    place-items: center;
+    border: none;
+    margin-top: 20px;
+  }
+
+  
+@keyframes neonPulse {
+  0% {
+    box-shadow: 
+      0 0 5px #fcfcfcd4,
+      0 0 10px #fcfcfcd4,
+      0 0 20px #fcfcfcd4,
+      0 0 40px #fcfcfcd4;
+  }
+  50% {
+    box-shadow: 
+      0 0 10px #fcfcfcd4,
+      0 0 20px#fcfcfcd4,
+      0 0 40px #fcfcfcd4,
+      0 0 80px #fcfcfcd4;
+  }
+  100% {
+    box-shadow: 
+      0 0 5px #fcfcfcd4,
+      0 0 10px #fcfcfcd4,
+      0 0 20px #fcfcfcd4,
+      0 0 40px #fcfcfcd4,
+  }
+}
+
+
+  .button{
+    display: grid;
+    place-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 10px;
+    background-color: rgb(79, 5, 148);
+    color: rgb(255, 255, 255);
+    border: none;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease;
+  }
+  
+.button:hover {
+  animation: neonPulse 2s infinite;
+}
+
+  
+ .name{
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .flip-card-back h3{
+    font-size: 1rem;
+  }
+
+  .flip-card-back{
+    padding: 20px;
+    background-color: #310458;
+  }
+
+
+  button:hover{
+    background-color: #1b082c;
+    cursor: pointer;
+  }
+
+  button:active{
+    background-color: #000000;
+  }
+
+/*Pie de pagina*/
+  footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+  }
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    
+    @media (max-width: 768px) {
+    header h1 {
+      font-size: 2em;
+    }
+
+    section h2 {
+      font-size: 2em;
+    }
+
+    nav {
+      font-size: 14px;
+    }
+  }
+ 
+/* NAV principal */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px;
+  display: flex;
+  justify-content: center; 
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  background: none;   
+  border: none;
+  outline: none;
+  right: 20px;
+  top: 15px;
+}
+
+
+.menu-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.952);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e42b9d;
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: flex-end;
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    text-align: right;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 60%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.473);
+    border-radius: 0 0 0 10px;
+  }
+
+  .menu-links.active {
+    display: flex;
+  }
+
+  .menu-links a {
+    padding: 10px;
+    margin: 5px 0;
+    display: block;
+  }
+}
+}
+
+header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); 
+  text-align: center;
+  line-height: 1.2;
+  margin: 0 auto;
+  max-width: 90%;
+  color: #fff;
+  text-shadow: 2px 2px 8px #000000;
+}
+
+header p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  text-align: center;
+  margin-top: 10px;
+  color: #f3f3f3;
+}
+
+#historia p {
+  padding: 20px;            
+  margin: auto;
+  max-width: 800px;
+  text-align: justify;
+  color: aliceblue;
+  font-size: 16px;
+  line-height: 1.6;          
+}
+
+.plato.highlight {
+  transform: scale(1.08);
+  z-index: 20;
+  filter: brightness(1.2);
+  transition: all 0.3s ease;
+}
+
+.platos.blur .plato:not(.highlight) {
+  filter: blur(3px) brightness(0.6);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* ===== Menú hamburguesa con 3 líneas ===== */
+.menu-toggle .icon,
+.menu-toggle .icon::before,
+.menu-toggle .icon::after {
+  content: '';
+  display: block;
+  width: 30px;            /* largo de las líneas */
+  height: 3px;            /* grosor de las líneas */
+  background-color: white; /* color de las líneas */
+  border-radius: 2px;     /* bordes redondeados */
+  transition: all 0.3s ease; /* animación suave */
+  position: relative;
+}
+
+.menu-toggle .icon::before {
+  position: absolute;
+  top: -8px; /* línea superior */
+}
+
+.menu-toggle .icon::after {
+  position: absolute;
+  top: 8px;  /* línea inferior */
+}
+
+/* Animación al abrir: líneas se cruzan en X */
+.menu-toggle.open .icon {
+  background-color: transparent;
+}
+
+.menu-toggle.open .icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.menu-toggle.open .icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
